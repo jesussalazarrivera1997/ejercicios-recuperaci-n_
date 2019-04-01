@@ -21,6 +21,11 @@ cada uno de los posibles errores.
 var coordenadas1 = [];
 navigator.geolocation.getCurrentPosition(function (position) {
     coordenadas1 = [position.coords.latitude, position.coords.longitude];
+    var uluru = { lat: coordenadas1[0],lng:coordenadas1[1] };
+    // The map, centered at Uluru
+    var map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: uluru });
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({ position: uluru, map: map });
 });
 var coordenadas2 = [];
 
@@ -62,16 +67,10 @@ function posicionVariable() {
         /* geolocation IS NOT available */
     }
 }
-
+console.log(coordenadas1[1])
 function calcularRecorrido(){
     calcularDistanciaPosicionesCoordenadas(coordenadas1[0],coordenadas1[1],coordenadas2[0],coordenadas2[1]);
 };
 
 function initMap() {
-    // The location of Uluru
-    var uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    var map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: uluru });
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({ position: uluru, map: map });
 }
