@@ -43,13 +43,27 @@ function mediaEdad(...args){
 Escribe una función que aleatoriamente vaya devolviendo el nombre de un estudiante cada
 vez.
 */
-
+function estudianteAzar(listaEstudiantes){
+    let num= Math.floor(Math.random() * listaEstudiantes.length + 1)
+    return listaEstudiantes[num]
+}
 /*
 5. Crear una función llamado paresImpares que cree un array de 100 números aleatorios del 1
 al 1000. Una vez creado, mostrar el contenido y después organizarlo de forma que estén
 juntos los elementos pares y los impares. Después, volver a mostrar el array
 */
-
+function paresImpares() {
+    let lista = [[], []];
+    for (i = 0; i < 100; i++) {
+        numero = x => { Math.floor(Math.random() * 1000 + 1) }
+        if (numero % 2 == 0) {
+            lista[0].push(numero);
+        } else {
+            lista[1].push(numero);
+        }
+    }
+    return lista;
+};
 /*6. Utiliza Arrays para resolver el siguiente problema: Una empresa paga a sus vendedores en
 base a comisiones. Los vendedores reciben $ 200 por semana, más el 9% de sus ventas
 brutas de esa semana. Por ejemplo, un vendedor que gana en total $ 5000 en ventas en una
@@ -57,6 +71,17 @@ semana recibe $ 200 más el 9 por ciento de $ 5000, o sea un total de $ 650.
 Diseña una web que permita dar de alta a vendedores, introducir sus ventas e indique cual
 sería su sueldo final.
 */
+vendedores=[[33421,3000]];
+function calcularPago(id){
+    let ganancia
+    for (i in vendedores){
+        if (i[0]==id){
+            ganancia= 200+(i[1]/100)*9
+        }
+    }
+    return  ganancia 
+}
+
 
 /*7. 
 Escribe las funciones para llevar a cabo las siguientes operaciones para un array de una
