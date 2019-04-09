@@ -47,8 +47,8 @@ function initMap() {
       geocodeLatLng(geocoder, map, infowindow);
     });
   }
-  
-  function geocodeLatLng(geocoder, map, infowindow) {
+
+function geocodeLatLng(geocoder, map, infowindow) {
     var input = document.getElementById('latlng').value;
     var latlngStr = input.split(',', 2);
     var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};

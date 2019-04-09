@@ -26,9 +26,30 @@ class Celda {
 }
 class Juego {
     constructor(alto, ancho) {
+        nuevatabla(alto,ancho);
         this.tablero = this.construirtablerro(alto, ancho);
         document.getElementById("0").addEventListener("")
     }
+    nuevatabla(x, y) {
+        let tabla = "<table>"
+        let cont1 = 0
+        let cont2 = 0
+        let cont3 = 0
+        for (let i = 0; i < x; i++) {
+            tabla += "<tr>";
+            for (let z = 0; z < y; z++) {
+                tabla += "<td id=" + cont1 + "" + cont2 + ">"+cont3+"</td>";
+                cont2++;
+            }
+            cont1++
+            cont2 = 0
+            tabla += "</tr>";
+        }
+        tabla += "</table>"
+
+        document.getElementById("juego").innerHTML = tabla;
+    }
+
     construirtablerro(alto, ancho) {
         espacios = [];
         let contador = 0
@@ -43,45 +64,45 @@ class Juego {
     }
 
     moverFicha(idamover) {
-        for (i in this.tablero){
-            for (x in i){
+        for (i in this.tablero) {
+            for (x in i) {
 
-                if (idamover==x.id){
-                    let coordenadas=x.positon;
-                    for (z in this.tablero){
-                        for(y in z){
-                            coordenadas2=y.positon;
-                            if ((coordenadas[0]-1==y.positon[0])&&(coordenadas[1]+1==y.positon[1])){
-                                y.positon=coordenadas;
-                                x.positon=coordenadas2;
+                if (idamover == x.id) {
+                    let coordenadas = x.positon;
+                    for (z in this.tablero) {
+                        for (y in z) {
+                            coordenadas2 = y.positon;
+                            if ((coordenadas[0] - 1 == y.positon[0]) && (coordenadas[1] + 1 == y.positon[1])) {
+                                y.positon = coordenadas;
+                                x.positon = coordenadas2;
                                 break;
-                            }if ((coordenadas[0]-1==y.positon[0])&&(coordenadas[1]-1==y.positon[1])){
-                                y.positon=coordenadas;
-                                x.positon=coordenadas2;
+                            } if ((coordenadas[0] - 1 == y.positon[0]) && (coordenadas[1] - 1 == y.positon[1])) {
+                                y.positon = coordenadas;
+                                x.positon = coordenadas2;
                                 break;
-                            }if ((coordenadas[0]-1==y.positon[0])&&(coordenadas[1]==y.positon[1])){
-                                y.positon=coordenadas;
-                                x.positon=coordenadas2;
+                            } if ((coordenadas[0] - 1 == y.positon[0]) && (coordenadas[1] == y.positon[1])) {
+                                y.positon = coordenadas;
+                                x.positon = coordenadas2;
                                 break;
-                            }if ((coordenadas[0]==y.positon[0])&&(coordenadas[1]+1==y.positon[1])){
-                                y.positon=coordenadas;
-                                x.positon=coordenadas2;
+                            } if ((coordenadas[0] == y.positon[0]) && (coordenadas[1] + 1 == y.positon[1])) {
+                                y.positon = coordenadas;
+                                x.positon = coordenadas2;
                                 break;
-                            }if ((coordenadas[0]==y.positon[0])&&(coordenadas[1]-1==y.positon[1])){
-                                y.positon=coordenadas;
-                                x.positon=coordenadas2;
+                            } if ((coordenadas[0] == y.positon[0]) && (coordenadas[1] - 1 == y.positon[1])) {
+                                y.positon = coordenadas;
+                                x.positon = coordenadas2;
                                 break;
-                            }if ((coordenadas[0]+1==y.positon[0])&&(coordenadas[1]+1==y.positon[1])){
-                                y.positon=coordenadas;
-                                x.positon=coordenadas2;
+                            } if ((coordenadas[0] + 1 == y.positon[0]) && (coordenadas[1] + 1 == y.positon[1])) {
+                                y.positon = coordenadas;
+                                x.positon = coordenadas2;
                                 break;
-                            }if ((coordenadas[0]+1==y.positon[0])&&(coordenadas[1]-1==y.positon[1])){
-                                y.positon=coordenadas;
-                                x.positon=coordenadas2;
+                            } if ((coordenadas[0] + 1 == y.positon[0]) && (coordenadas[1] - 1 == y.positon[1])) {
+                                y.positon = coordenadas;
+                                x.positon = coordenadas2;
                                 break;
-                            }if ((coordenadas[0]+1==y.positon[0])&&(coordenadas[1]==y.positon[1])){
-                                y.positon=coordenadas;
-                                x.positon=coordenadas2;
+                            } if ((coordenadas[0] + 1 == y.positon[0]) && (coordenadas[1] == y.positon[1])) {
+                                y.positon = coordenadas;
+                                x.positon = coordenadas2;
                                 break;
                             };
                         };
