@@ -33,7 +33,7 @@ function refrescarMapa() {
     });
 
 }
-function initdMap() {
+function initMap() {
     //get api uses
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
