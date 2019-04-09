@@ -12,7 +12,7 @@ function mapaLocalizacionActual2() {
         coordenadas1 = { lat: position.coords.latitude, lng: position.coords.longitude };
     });
     // The map, centered 
-    var map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: coordenadas1 });
+    var map = new google.maps.Map(document.getElementById('mapa'), { zoom: 4, center: coordenadas1 });
     // The marker, positioned 
 
     marker = new google.maps.Marker({
@@ -41,7 +41,7 @@ function initdMap() {
     var waypts = [{ location: { lat: 41.94, lng: 1.56 }, stopover: true }, { location: { lat: 41.99, lng: 1.53 }, stopover: true }, { location: { lat: 41.98, lng: 1.52 }, stopover: true }];
 
     //api map
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementById('mapa'), {
         zoom: 6,
         center: { lat: waypts[0].location.lat, lng: waypts[0].location.lng }
     });
